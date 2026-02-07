@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #667eea;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #666;
+    font-size: 1.1em;
+}
+
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+#taskInput {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+#taskInput:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+select {
+    padding: 12px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+#addBtn {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#addBtn:hover {
+    transform: scale(1.05);
+}
+
+#addBtn:active {
+    transform: scale(0.95);
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    background: #f5f5f5;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 14px;
+}
+
+.filter-btn:hover {
+    background: #e0e0e0;
+}
+
+.filter-btn.active {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.task-item {
+    background: #f9f9f9;
+    padding: 15px 20px;
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s;
+    cursor: move;
+}
+
+.task-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.task-item.completed {
+    opacity: 0.6;
+    background: #e8f5e9;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+}
+
+.task-item.high {
+    border-left-color: #f44336;
+}
+
+.task-item.medium {
+    border-left-color: #ff9800;
+}
+
+.task-item.low {
+    border-left-color: #4caf50;
+}
+
+.task-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.task-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.task-text {
+    font-size: 16px;
+    color: #333;
+}
+
+.task-meta {
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.priority-badge,
+.category-badge {
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.priority-badge.high {
+    background: #ffebee;
+    color: #f44336;
+}
+
+.priority-badge.medium {
+    background: #fff3e0;
+    color: #ff9800;
+}
+
+.priority-badge.low {
+    background: #e8f5e9;
+    color: #4caf50;
+}
+
+.category-badge {
+    background: #e3f2fd;
+    color: #2196f3;
+}
+
+.delete-btn {
+    padding: 8px 15px;
+    background: #f44336;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.delete-btn:hover {
+    background: #d32f2f;
+    transform: scale(1.05);
+}
+
+.task-item.dragging {
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .input-section {
+        flex-direction: column;
+    }
+    
+    #taskInput {
+        min-width: 100%;
+    }
+}
